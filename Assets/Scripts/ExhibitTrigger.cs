@@ -2,8 +2,7 @@ using System.Collections;
 using UnityEngine;
 
 /// Put on each exhibit root together with a trigger Collider (Is Trigger = true).
-/// When the player enters: fades in the info panel, turns on a spotlight, plays audio,
-/// starts an animation, and registers the visit with MuseumManager.
+/// When the player enters: fades in the info panel, turns on a spotlight, and plays audio.
 [RequireComponent(typeof(Collider))]
 public class ExhibitTrigger : MonoBehaviour
 {
@@ -14,8 +13,6 @@ public class ExhibitTrigger : MonoBehaviour
     public CanvasGroup infoPanel;          // world-space canvas with CanvasGroup
     public Light spotlight;                // optional
     public AudioSource narration;          // optional
-    public Animator exhibitAnimator;       // optional (Bonus 2)
-    public string animatorBoolName = "Active";
 
     [Header("Tuning")]
     public float fadeTime = 0.4f;
@@ -39,7 +36,6 @@ public class ExhibitTrigger : MonoBehaviour
         if (!other.CompareTag("Player")) return;
         player = other.transform;
         SetActive(true);
-        if (MuseumManager.Instance != null) MuseumManager.Instance.RegisterVisit(exhibitName);
     }
 
     void OnTriggerExit(Collider other)
@@ -67,7 +63,6 @@ public class ExhibitTrigger : MonoBehaviour
         {
             if (on) narration.Play(); else narration.Stop();
         }
-        if (exhibitAnimator != null) exhibitAnimator.SetBool(animatorBoolName, on);
     }
 
     IEnumerator Fade(bool on)
