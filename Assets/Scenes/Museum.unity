@@ -8159,6 +8159,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1856395607}
   - component: {fileID: 5609913372841745204}
+  - component: {fileID: 8134281976402553571}
   m_Layer: 0
   m_Name: Room
   m_TagString: Untagged
@@ -9424,6 +9425,21 @@ MonoBehaviour:
   snapTurnAngle: 45
   snapTurnCooldown: 0.25
   stickDeadzone: 0.2
+--- !u!114 &8134281976402553571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1856395606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93ce01146e5243d0a801476fd9c30f5b, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: Assembly-CSharp::MuseumPlayModeBootstrap
+  desktopPlayerPrefab: {fileID: 8616685848737228372, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+  xrRig: {fileID: 1039066819}
+  desktopSpawnPosition: {x: 0, y: 0.05, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
