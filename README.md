@@ -6,8 +6,7 @@ Colin Miller and Gabriel Strickland
 ## Museum: The Space Age
 This museum explores milestones in space exploration, from the first artificial satellite and crewed orbital flight to the Apollo Moon landing and modern space telescopes. The topic shows how international competition and collaboration expanded our understanding of Earth, the Moon, and the wider universe.
 
-The closed museum scene contains six exhibits, each with a proximity-activated information panel and spotlight:
-
+The closed museum scene contains six exhibits, each with a proximity-activated information panel:
 - Sputnik 1 (launched October 4, 1957)
 - Vostok 1 (launched April 12, 1961)
 - Apollo 11 Lunar Module Eagle (launched July 16, 1969)
