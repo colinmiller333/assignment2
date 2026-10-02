@@ -55,7 +55,7 @@ public class ExhibitTrigger : MonoBehaviour
         if (isWithinRange != isActive) SetActive(isWithinRange);
 
         if (!panelFacesPlayer || !isActive || infoPanel == null) return;
-        Vector3 dir = viewer.position - infoPanel.transform.position;
+        Vector3 dir = infoPanel.transform.position - viewer.position;
         dir.y = 0f;
         if (dir.sqrMagnitude > 0.001f)
             infoPanel.transform.rotation = Quaternion.LookRotation(dir);
