@@ -8,7 +8,12 @@ This museum explores milestones in space exploration, from the first artificial 
 
 The closed museum scene contains six exhibits, each with a proximity-activated information panel:
 - Sputnik 1 (launched October 4, 1957)
+- <img width="326" height="176" alt="image" src="https://github.com/user-attachments/assets/f13ecb77-0f51-4453-b7a9-48d6dfaa9739" />
+- <img width="386" height="182" alt="image" src="https://github.com/user-attachments/assets/a20589f5-3ad5-4d50-b09a-073c135531cc" />
+- <img width="289" height="193" alt="image" src="https://github.com/user-attachments/assets/5cfc8d4e-b9f2-403f-b847-2a5291eec1d4" />
+
 - Vostok 1 (launched April 12, 1961)
+- 
 - Apollo 11 Lunar Module Eagle (launched July 16, 1969)
 - Saturn V (first launched November 1967; last launched May 14, 1973)
 - James Webb Space Telescope (launched December 25, 2021)
