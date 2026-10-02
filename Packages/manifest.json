@@ -3,6 +3,7 @@
     "com.meta.xr.sdk.all": "207.0.0",
     "com.meta.xr.sdk.core": "207.0.0",
     "com.meta.xr.sdk.interaction": "207.0.0",
+    "com.meta.xr.simulator.synthenvbuilder": "60.0.1",
     "com.unity.ai.assistant": "2.19.0-pre.2",
     "com.unity.ai.inference": "2.6.1",
     "com.unity.ai.navigation": "2.0.14",
