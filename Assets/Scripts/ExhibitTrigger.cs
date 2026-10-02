@@ -72,34 +72,50 @@ public class ExhibitTrigger : MonoBehaviour
             {
                 case "Sputnik 1":
                     exhibitYear = "October 4, 1957";
-                    exhibitDescription = "The Soviet Union's Sputnik 1 was the first artificial satellite. About 58 cm across and 189 lb, its launch began the Space Age and the U.S.-Soviet Space Race, and helped spur the creation of NASA in 1958.";
+                    exhibitDescription = "The USSR launched Sputnik 1 on October 4, 1957. The first artificial satellite was about 58 cm wide and weighed 189 lb. The idea grew from a 1954 proposal for satellite mapping during the International Geophysical Year. Its launch began the Space Age and the U.S.-Soviet space race; Congress created NASA in 1958. A month later, Sputnik 2 carried Laika.";
                     break;
                 case "Vostok 1":
                     exhibitYear = "April 12, 1961";
-                    exhibitDescription = "Soviet cosmonaut Yuri Gagarin became the first person to orbit Earth. Vostok 1 completed one orbit, reached 327 km altitude, and returned after a 108-minute flight.";
+                    exhibitDescription = "Cosmonaut Yuri Gagarin became the first person to orbit Earth. Vostok 1 completed one orbit in 108 minutes, reaching 327 km at its highest and 181 km at its lowest. Gagarin ejected from the capsule and parachuted to Earth. The flight capped the Soviet program competing with the U.S. Project Mercury.";
                     break;
                 case "Apollo 11 LM":
                     exhibitYear = "July 16, 1969";
-                    exhibitDescription = "Launched atop a Saturn V, lunar module Eagle carried Neil Armstrong and Buzz Aldrin to the Moon. It landed at Tranquility Base on July 20, the first crewed lunar landing; its descent stage remains on the Moon.";
+                    exhibitDescription = "Launched atop a Saturn V, Eagle traveled to lunar orbit with command module Columbia. Neil Armstrong and Buzz Aldrin landed at Tranquility Base on July 20, the first crewed Moon landing. They left Eagle's descent stage at the site and returned to Columbia in the ascent stage; the descent stage's present location is unknown.";
                     break;
                 case "Saturn V":
                     exhibitYear = "1967-1973";
-                    exhibitDescription = "NASA developed this three-stage, liquid-fueled heavy-lift rocket for human lunar exploration. It launched 13 times from Kennedy Space Center; nine crewed launches carried 24 astronauts. Apollo 6 was its one partial failure.";
+                    exhibitDescription = "NASA developed this three-stage, liquid-fueled super-heavy rocket for human lunar exploration. All 13 launches began at Kennedy Space Center Launch Complex 39. Nine crewed flights carried 24 astronauts. The Saturn V had 12 successful launches and one partial failure: Apollo 6.";
                     break;
                 case "James Webb Telescope":
                     exhibitYear = "December 25, 2021";
-                    exhibitDescription = "A NASA, ESA, and CSA observatory, Webb orbits the Sun about 1.5 million km from Earth. Its 6.5 m mirror observes red and infrared light; a five-layer sunshield keeps it near -223 C.";
+                    exhibitDescription = "Named for NASA administrator James E. Webb, this NASA, ESA, and CSA observatory launched on December 25, 2021. It orbits the Sun about 1.5 million km from Earth at the second Lagrange point. Its 6.5 m mirror is 2.7 times Hubble's diameter and observes red and infrared light. A five-layer sunshield keeps the telescope near -223 C.";
                     break;
                 case "Hubble":
                     exhibitYear = "April 24, 1990";
-                    exhibitDescription = "Hubble launched into low Earth orbit aboard Space Shuttle Discovery on mission STS-31. Its 2.4 m mirror observes ultraviolet, visible, and near-infrared light; servicing missions helped extend its scientific life.";
+                    exhibitDescription = "Hubble launched into low Earth orbit aboard Space Shuttle Discovery on mission STS-31. Its 2.4 m mirror and five instruments observe ultraviolet, visible, and near-infrared light. The 1986 Challenger disaster delayed launch for several years, during which engineers tested and improved the telescope. Shuttle servicing missions later repaired and upgraded it.";
                     break;
             }
         }
 
-        if (titleText != null) titleText.text = exhibitName;
-        if (yearText != null) yearText.text = exhibitYear;
-        if (descriptionText != null) descriptionText.text = exhibitDescription;
+        SetPanelText(titleText, exhibitName);
+        SetPanelText(yearText, exhibitYear);
+        SetPanelText(descriptionText, exhibitDescription);
+    }
+
+    static void SetPanelText(TMP_Text textComponent, string value)
+    {
+        if (textComponent == null) return;
+
+        TMP_InputField inputField = textComponent.GetComponentInParent<TMP_InputField>();
+        if (inputField != null)
+        {
+            inputField.readOnly = true;
+            inputField.text = value;
+        }
+        else
+        {
+            textComponent.text = value;
+        }
     }
 
     void SetActive(bool on)
