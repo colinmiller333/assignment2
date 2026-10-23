@@ -45,6 +45,13 @@ static class BikeAssemblyRuntimeSetup
         if (placementManager == null)
             placementManager = partsRoot.gameObject.AddComponent<ItemPlacementManager>();
 
+        placementManager.ConfigureSequence(PartNames);
+        BikeAssemblyProgressScreen progressScreen = FindInstructionsPanel(scene);
+        if (progressScreen != null)
+            progressScreen.Initialize(placementManager);
+        else
+            Debug.LogError("Bike assembly scene is missing the Bike Assembly Instructions panel (BikeAssemblyProgressScreen).");
+
         for (int i = 0; i < PartNames.Length; i++)
         {
             Transform sourcePart = partsRoot.Find(PartNames[i]);
@@ -137,6 +144,16 @@ static class BikeAssemblyRuntimeSetup
         {
             ItemPlacementManager manager = root.GetComponentInChildren<ItemPlacementManager>(true);
             if (manager != null) return manager;
+        }
+        return null;
+    }
+
+    static BikeAssemblyProgressScreen FindInstructionsPanel(Scene scene)
+    {
+        foreach (GameObject root in scene.GetRootGameObjects())
+        {
+            BikeAssemblyProgressScreen panel = root.GetComponentInChildren<BikeAssemblyProgressScreen>(true);
+            if (panel != null) return panel;
         }
         return null;
     }
